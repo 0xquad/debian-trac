@@ -22,7 +22,7 @@ RUN trac-admin ${TRAC_ROOT} component remove component1 && \
     trac-admin ${TRAC_ROOT} milestone remove milestone3 && \
     trac-admin ${TRAC_ROOT} milestone remove milestone4
 RUN trac-admin ${TRAC_ROOT} permission add anonymous TRAC_ADMIN
-RUN mkdir ${TRAC_ROOT}/{files}
+RUN mkdir -p ${TRAC_ROOT}/files
 
 ENV TRAC_ROOT ${TRAC_ROOT}
 EXPOSE 80 443
