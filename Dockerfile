@@ -9,7 +9,7 @@ LABEL description="Base system to run Trac in a Gentoo environment" \
 ARG TRAC_ROOT=/trac
 
 RUN apt-get update && apt-get install -y python python-pip && \
-    rm -fr /var/cache/apt/lists
+    rm -fr /var/lib/apt/lists
 RUN pip install trac
 
 RUN (echo; echo) | trac-admin ${TRAC_ROOT} initenv
