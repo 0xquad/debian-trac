@@ -24,6 +24,7 @@ RUN trac-admin ${TRAC_ROOT} component remove component1 && \
 RUN trac-admin ${TRAC_ROOT} permission add anonymous TRAC_ADMIN
 RUN mkdir ${TRAC_ROOT}/{files}
 
+ENV TRAC_ROOT ${TRAC_ROOT}
 EXPOSE 80 443
 VOLUME ${TRAC_ROOT}/db
-CMD ["tracd", "-s", "${TRAC_ROOT}"]
+CMD exec tracd -s ${TRAC_ROOT}
