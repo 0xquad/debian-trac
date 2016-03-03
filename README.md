@@ -11,6 +11,14 @@ official Debian image and is available at
 https://gist.github.com/0xquad/8aa3812ea7788d2bc687 (clone this and run
 `./strip-jessie.sh`).
 
+The image also installs a few useful plugins for Trac:
+
+- [TracCustomFieldAdmin](http://trac-hacks.org/wiki/CustomFieldAdminPlugin)
+- [TracFullBlogPlugin](http://trac-hacks.org/wiki/FullBlogPlugin)
+- [TracTags](http://trac-hacks.org/wiki/TagsPlugin)
+
+Each plugin can be disabled in the admin panel if needed, but they are all enabled by default.
+
 To run an instance:
 
     docker run -dtp 8080:80 debian-trac
