@@ -34,7 +34,9 @@ RUN echo '[components]' >> ${TRAC_ROOT}/conf/trac.ini
 RUN echo 'tractags.* = enabled' >> ${TRAC_ROOT}/conf/trac.ini
 RUN echo 'tracfullblog.* = enabled' >> ${TRAC_ROOT}/conf/trac.ini
 RUN echo 'customfieldadmin.* = enabled' >> ${TRAC_ROOT}/conf/trac.ini
-RUN sed -i -e '/^mainnav/ s/wiki,/wiki,blog/' ${TRAC_ROOT}/conf/trac.ini
+RUN sed -i -e '/^mainnav/ s/wiki/wiki,blog/' ${TRAC_ROOT}/conf/trac.ini
+RUN sed -i -e '/^mainnav/ s/browser,//' ${TRAC_ROOT}/conf/trac.ini
+#RUN sed -i -e '/^default_handler/ s/WikiModule/FullBlogModule/' ${TRAC_ROOT}/conf/trac.ini
 
 RUN trac-admin ${TRAC_ROOT} upgrade
 RUN trac-admin ${TRAC_ROOT} permission add anonymous TAGS_VIEW TAGS_MODIFY BLOG_ADMIN
