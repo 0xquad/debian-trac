@@ -2,7 +2,7 @@
 
 FROM debian-small
 MAINTAINER Alexandre Hamelin <alexandre.hamelin gmail.com>
-LABEL description="Base system to run Trac in a Gentoo environment" \
+LABEL description="Base system to run Trac in a minimal Debian environment" \
       copyright="(c) 2016, Alexandre Hamelin <alexandre.hamelin gmail.com>" \
       license="MIT"
 
